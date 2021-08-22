@@ -17,6 +17,31 @@ export class QuoteComponent implements OnInit {
     new Quote(6, 'Cherotich', 'Toleration is the greatest gift of the mind; it requires the same effort of the brain that it takes to balance oneself on a bicycle.', 'Helen Keller', new Date(), 0, 0)
 
   ];
+  get sortQuotes() {
+    return this.quotes.sort((a, b) => {
+      return b.likes - a.likes;
+    })
+  }
+
+  addNewQuote(quote: any) {
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+
+    this.quotes.push(quote);
+  }
+  Details(index: any) {
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  };
+
+  deleteQuote(isComplete: any, index: any) {
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete a quote by ${this.quotes[index].author}?`)
+      if (toDelete) {
+        this.quotes.splice(index, 1);
+      }
+    }
+
+  }
 
   constructor() { }
 
