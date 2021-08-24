@@ -1,12 +1,12 @@
 <div class="container text-center p-3">
-    <h1 appHighlight >The Quotes App</h1>
+    <h1 class="text-light">The Quotes App</h1>
 </div>
 <div class="container">
     <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     <div class="row">
         <div *ngFor='let quote of sortQuotes;let i = index' class="col-md-4 mb-4">
             <div class="card text-white shadow p-3 mb-5 bg-light rounded">
-                <div class="card-header text-dark ">
+                <div class="card-header text-dark">
                     Quote
                 </div>
                 <div class="card-body">

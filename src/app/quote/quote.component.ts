@@ -27,7 +27,7 @@ export class QuoteComponent implements OnInit {
     let quoteLength = this.quotes.length;
     quote.id = quoteLength + 1;
 
-    this.quotes.push(quote);
+    this.quotes.push(quote); 
   }
   Details(index: any) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
